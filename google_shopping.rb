@@ -26,7 +26,7 @@ end
 
 #Problem 3 Find all items with more than one image link.
 puts "\n" 'These items have more than one image link:'
-items.each_with_index do |i, index|
+items.each_with_index do |i|
 	if i["product"]["images"].length > 1
 		puts i["product"]["title"]
 	end
@@ -51,10 +51,10 @@ end
 #Problem 6 Print all the products with their brand, price, and a image link.
 puts "\n" 'These are all the products with their brand, price and image link:'
 items.each do |i|
-	puts "\n" 'Product: ' + i["product"]["title"] +
-	"\n" 'Brand: ' + i["product"]["brand"] +
-	"\n" 'Price: ' + i["product"]["inventories"][0]['price'].to_s +
-	"\n" 'Image Link: ' + i["product"]["images"][0]["link"]
+	puts "\n" "Product: #{i["product"]["title"]}" 
+	puts "Brand: #{i["product"]["brand"]}"
+	puts "Price: #{i["product"]["inventories"][0]['price']}"
+	puts "Image Link: #{i["product"]["images"][0]["link"]}"
 end
 
 
