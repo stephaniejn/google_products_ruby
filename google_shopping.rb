@@ -26,7 +26,7 @@ end
 
 #Problem 3 Find all items with more than one image link.
 puts "\n" 'These items have more than one image link:'
-items.each do |i|
+items.each_with_index do |i, index|
 	if i["product"]["images"].length > 1
 		puts i["product"]["title"]
 	end
@@ -35,7 +35,7 @@ end
 #Problem 4 Find all canon products in the items. 
 puts "\n" 'These are the Canon products:'
 items.each do |i|
-	if i["product"]["brand"] === "Canon"
+	if i["product"]["brand"] == "Canon"
 		puts i["product"]["title"]
 	end
 end
@@ -43,7 +43,7 @@ end
 #Problem 5 Find all items that have product author name of "eBay" and are brand "Canon".
 puts "\n" 'These are Canon products with product author name eBay:'
 items.each do |i|
-	if i["product"]["brand"] === "Canon" && i["product"]["author"]["name"] === "eBay"
+	if i["product"]["brand"] == "Canon" && i["product"]["author"]["name"] == "eBay"
 		puts i["product"]["title"]
 	end
 end
